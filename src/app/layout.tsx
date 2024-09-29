@@ -1,5 +1,5 @@
-import type, {Metadata} from "next"
-import {Inter, Calistoga} from 'next/font/google'
+import type, { Metadata } from "next"
+import { Inter, Calistoga } from 'next/font/google'
 import "./globals.css"
 import "@/sections/Header"
 import { twMerge } from "tailwind-merge";
@@ -16,8 +16,16 @@ const calistoga = Calistoga({
 });
 
 export const metadata: Metadata = {
-  title: "My Portfolio",
-  description: "Created with the help of Frontend Tribe"
+  title: 'Sahad Daily',
+  description: 'Your site description',
+  icons: {
+    icon: [
+      { url: '/favicon.png', sizes: 'any' }, // Fallback .ico file for older browsers
+      { url: '/favicon-32x32.png', type: 'image/png', sizes: '32x32' }, // For standard screens
+      { url: '/favicon-64x64.png', type: 'image/png', sizes: '64x64' }, // For higher-resolution displays
+      { url: '/favicon-128x128.png', type: 'image/png', sizes: '128x128' }, // For very high-resolution displays
+    ],
+  },
 };
 
 export default function RootLayout({
