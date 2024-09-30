@@ -21,12 +21,16 @@ const config: Config = {
       },
     },
     extend: {
-      fontFamily:{
+      fontFamily: {
         sans: 'var(--font-sans)',
         serif: 'var(--font-serif)'
+      },
+      maskImage: {
+        'gradient-to-r': 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)',
       }
     },
   },
   plugins: [],
 };
+
 export default config;

@@ -19,3 +19,8 @@
         @apply lg:max-w-5xl
     }
 }
+
+.element {
+    mask-image: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.1) 10%, rgba(0, 0, 0, 0.9) 10%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.9) 10%, transparent);
+}
