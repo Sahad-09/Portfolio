@@ -8,7 +8,7 @@ import { HeroOrbit } from "@/components/HeroOrbit";
 export const HeroSection = () => {
   return (
     <div className="py-32 md:py-48 lg:py-60 relative z-0 overflow-clip  ">
-      <div className="absolute inset-0 [mask-image:linear-gradient(to_bottom, transparent, black_10%, black_70%, transparent)]">
+      <div className="absolute inset-0 [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_70%,transparent)]">
         <div
           className="absolute inset-0 -z-30 opacity-5"
           style={{
@@ -19,21 +19,38 @@ export const HeroSection = () => {
         <div className=" size-[820px] hero-ring"></div>
         <div className=" size-[1020px] hero-ring"></div>
         <div className=" size-[1220px] hero-ring"></div>
-        <HeroOrbit size={800} rotation={1}>
-          <StarIcon className=" size-28 text-emerald-300" />
+        <HeroOrbit size={1200} rotation={50} shouldOrbit={true} orbitDuration="30s" shouldSpin={true} spinDuration="25s">
+          <StarIcon className="size-40 text-[#DF3750]" />
         </HeroOrbit>
-        <HeroOrbit size={500} rotation={-100}>
-          <StarIcon className=" size-18 text-emerald-300" />
+        <HeroOrbit size={1000} rotation={30} shouldOrbit={true} orbitDuration="28s" shouldSpin={true} spinDuration="23s">
+          <StarIcon className="size-35 text-[#DF3750]" />
         </HeroOrbit>
-        <HeroOrbit size={300} rotation={-1000}>
-          <StarIcon className=" size-7 text-emerald-300" />
+        <HeroOrbit size={800} rotation={1} shouldOrbit={true} orbitDuration="26s" shouldSpin={true} spinDuration="22s">
+          <StarIcon className="size-28 text-[#DF3750]" />
+        </HeroOrbit>
+        <HeroOrbit size={700} rotation={-50} shouldOrbit={true} orbitDuration="25s" shouldSpin={true} spinDuration="21s">
+          <StarIcon className="size-24 text-[#DF3750]" />
+        </HeroOrbit>
+        <HeroOrbit size={600} rotation={-75} shouldOrbit={true} orbitDuration="24s" shouldSpin={true} spinDuration="20s">
+          <StarIcon className="size-20 text-[#DF3750]" />
+        </HeroOrbit>
+        <HeroOrbit size={500} rotation={-100} shouldOrbit={true} orbitDuration="23s" shouldSpin={true} spinDuration="20s">
+          <StarIcon className="size-18 text-[#DF3750]" />
+        </HeroOrbit>
+        <HeroOrbit size={400} rotation={-500} shouldOrbit={true} orbitDuration="22s" shouldSpin={true} spinDuration="20s">
+          <StarIcon className="size-14 text-[#DF3750]" />
+        </HeroOrbit>
+        <HeroOrbit size={300} rotation={-1000} shouldOrbit={true} orbitDuration="21s" shouldSpin={true} spinDuration="20s">
+          <StarIcon className="size-7 text-[#DF3750]" />
         </HeroOrbit>
       </div>
       <div className="container ">
         <div className=" flex flex-col items-center">
           <Image src={memojiImage} className="size-[100px]" alt="Person peeking from behind laptop" />
           <div className="bg-gray-950 border border-gray-800 px-4 py-1.5 inline-flex items-center gap-4 rounded-lg">
-            <div className=" bg-green-500 size-2.5 rounded-full "></div>
+            <div className=" bg-green-500 size-2.5 rounded-full relative ">
+              <div className="bg-green-500 absolute inset-0 animate-ping-large rounded-full"></div>
+            </div>
             <div className=" text-sm font-medium">Available for new projects</div>
           </div>
         </div>
