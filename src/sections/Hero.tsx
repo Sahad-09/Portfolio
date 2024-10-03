@@ -4,6 +4,7 @@ import Image from "next/image";
 import grainImage from "@/assets/images/grain.jpg"
 import StarIcon from "@/assets/icons/star.svg"
 import { HeroOrbit } from "@/components/HeroOrbit";
+import Link from 'next/link';
 
 export const HeroSection = () => {
   return (
@@ -55,10 +56,9 @@ export const HeroSection = () => {
           </div>
         </div>
         <div className="max-w-lg mx-auto">
-          <h1 className="font-serif text-3xl md:text-5xl text-center mt-8 tracking-wide">Building Exceptional User Experiences</h1>
+          <h1 className="font-serif text-3xl md:text-5xl text-center mt-8 tracking-wide">Delivering Digital Solutions with Impact</h1>
           <p className="mt-4 text-center text-white/60 md:text-lg">
-            I specialize in transforming designs into functional, high-performing
-            web applications. Let&apos;s discuss your next project.
+            "Sahad Daily, at your service day and night, designing and marketing to make your brand take flight."
           </p>
         </div>
         <div className="flex flex-col md:flex-row justify-center items-center mt-8 gap-4">
@@ -66,10 +66,12 @@ export const HeroSection = () => {
             <span className=" font-semibold">Explore My Work</span>
             <ArrowDown className="size-4" />
           </button>
-          <button className=" inline-flex items-center gap-2 border bg-white border-white text-gray-900 h-12 px-6 rounded-xl">
-            <span>👋</span>
-            <span className="font-semibold">Let&apos;s Connect</span>
-          </button>
+          <Link href="/contact">
+            <button className="inline-flex items-center gap-2 border bg-white border-white text-gray-900 h-12 px-6 rounded-xl">
+              <span>👋</span>
+              <span className="font-semibold">Let&apos;s Connect</span>
+            </button>
+          </Link>
         </div>
       </div>
     </div>

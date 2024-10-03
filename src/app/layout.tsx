@@ -3,6 +3,7 @@ import { Inter, Calistoga } from 'next/font/google'
 import "./globals.css"
 import "@/sections/Header"
 import { twMerge } from "tailwind-merge";
+import { Header } from "@/sections/Header";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -42,6 +43,7 @@ export default function RootLayout({
           "bg-gray-900 text-white antialiased font-sans"
         )}
       >
+        <Header />
         {children}
       </body>
     </html>
