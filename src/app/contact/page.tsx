@@ -1,4 +1,4 @@
-import { sendEmail } from '../../../lib/actions';
+import { sendEmail } from '../../lib/actions';
 import ContactForm from './ContactForm';
 
 export default function ContactPage() {

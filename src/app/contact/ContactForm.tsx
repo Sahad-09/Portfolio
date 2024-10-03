@@ -1,7 +1,7 @@
 'use client';
 
 import { useRef, useState } from 'react';
-import { sendEmail } from '../../../lib/actions';
+import { sendEmail } from '../../lib/actions';
 import { useFormStatus } from 'react-dom';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
