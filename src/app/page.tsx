@@ -11,7 +11,6 @@ export default function Home() {
   return (
     <div>
       <section id="home">
-
         <HeroSection />
       </section>
       <section id="project">
