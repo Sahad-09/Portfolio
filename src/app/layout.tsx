@@ -19,7 +19,7 @@ const calistoga = Calistoga({
 export const metadata: Metadata = {
   title: 'Sahad Daily | Web Design & Digital Marketing Agency',
   description: 'Expert web design and digital marketing solutions to grow your business. We create stunning, conversion-focused websites and implement results-driven marketing strategies.',
-  keywords: 'web design, digital marketing, SEO, website development, marketing agency, brand strategy',
+  keywords: 'web design, digital marketing, SEO, website development, marketing agency, brand strategy, Sahad Daily, sahad daily',
   openGraph: {
     title: 'Sahad Daily | Web Design & Digital Marketing Agency',
     description: 'Transform your online presence with our expert web design and digital marketing solutions. Get stunning, conversion-focused websites and data-driven strategies.',
