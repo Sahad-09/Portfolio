@@ -16,6 +16,7 @@ const calistoga = Calistoga({
   weight: ["400"]
 });
 
+
 export const metadata: Metadata = {
   title: 'Sahad Daily | Web Design & Digital Marketing Agency',
   description: 'Expert web design and digital marketing solutions to grow your business. We create stunning, conversion-focused websites and implement results-driven marketing strategies.',
@@ -26,25 +27,30 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     siteName: 'Sahad Daily',
+    images: [{
+      url: '/favicon.png',
+      width: 1200,
+      height: 630,
+      alt: 'Sahad Daily - Web Design & Digital Marketing Agency'
+    }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Sahad Daily | Web Design & Digital Marketing Agency',
     description: 'Elevate your brand with professional web design and strategic digital marketing. Let\'s grow your business together.',
+    images: ['/favicon.png'],
+
   },
   icons: {
     icon: [
       { url: '/favicon.png', sizes: 'any' },
-      { url: '/favicon-32x32.png', type: 'image/png', sizes: '32x32' },
-      { url: '/favicon-64x64.png', type: 'image/png', sizes: '64x64' },
-      { url: '/favicon-128x128.png', type: 'image/png', sizes: '128x128' },
     ],
   },
   verification: {
     google: 'G0mmWzC9rBrM9YXXlsvAXB67BQ4YvIWwV1VZ89RFrwE',
   },
   alternates: {
-    canonical: 'https://www.sahaddaily.com', // Replace with your actual domain
+    canonical: 'https://www.sahaddaily.in',
   },
 };
 
