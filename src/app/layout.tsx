@@ -1,7 +1,7 @@
-import type, { Metadata } from "next"
-import { Inter, Calistoga } from 'next/font/google'
-import "./globals.css"
-import "@/sections/Header"
+import type { Metadata } from "next";
+import { Inter, Calistoga } from 'next/font/google';
+import "./globals.css";
+import "@/sections/Header";
 import { twMerge } from "tailwind-merge";
 import { Header } from "@/sections/Header";
 
@@ -30,13 +30,16 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
     <html lang="en">
+      <head>
+        {/* Google Site Verification Meta Tag */}
+        <meta name="google-site-verification" content="G0mmWzC9rBrM9YXXlsvAXB67BQ4YvIWwV1VZ89RFrwE" />
+      </head>
       <body
         className={twMerge(
           inter.variable,
