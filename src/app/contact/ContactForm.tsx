@@ -77,10 +77,10 @@ export default function ContactForm() {
                     required
                 />
             </div>
-            <div className="space-y-2 text-[#FFFFFF]">
-                <Label htmlFor="country" className="text-white font-semibold">
+            <div className="space-y-2">
+                <label htmlFor="country" className="text-white font-semibold">
                     Country
-                </Label>
+                </label>
                 <Select
                     id="country"
                     name="country"
@@ -90,7 +90,7 @@ export default function ContactForm() {
                     placeholder="Select your country"
                     getOptionLabel={(option) => option.label}
                     getOptionValue={(option) => option.value}
-                    className="bg-[#111827] text-white border border-[#111827] focus:ring-[#111827] focus:border-[#111827] placeholder:text-gray-400"
+                    className="bg-[#111827] text-white border border-[#E4E4E7] focus:ring-[#111827] focus:border-[#111827] placeholder:text-gray-400 scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-900 rounded-lg"
                     styles={{
                         control: (base) => ({
                             ...base,
@@ -100,7 +100,7 @@ export default function ContactForm() {
                         }),
                         placeholder: (base) => ({
                             ...base,
-                            color: '#FFFFFF', // Adjust placeholder color if needed
+                            color: '#BFBFBF', // Adjust placeholder color if needed
                         }),
                         option: (base) => ({
                             ...base,
@@ -114,6 +114,7 @@ export default function ContactForm() {
                     }}
                 />
             </div>
+
 
             <div className="space-y-2">
                 <Label htmlFor="mobile">Mobile Number</Label>
