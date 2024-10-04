@@ -1,8 +1,8 @@
-'use client';
-
-import { useRef, useState } from 'react';
+"use client"
+import React, { useRef, useState } from 'react';
 import { sendEmail } from '../../lib/actions';
 import { useFormStatus } from 'react-dom';
+import Select from 'react-select';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -11,6 +11,14 @@ import {
     Alert,
     AlertDescription
 } from '@/components/ui/alert';
+import countryOptions from '@/lib/countries.json';
+
+interface CountryOption {
+    label: string;
+    value: string;
+    phoneCode: string;
+    currency: string;
+}
 
 function SubmitButton() {
     const { pending } = useFormStatus();
@@ -19,7 +27,7 @@ function SubmitButton() {
         <Button
             type="submit"
             disabled={pending}
-            className="bg-white text-gray-950 h-12 w-full rounded-xl font-semibold inline-flex items-center justify-center gap-2 mt-8   md:w-auto px-6 hover:bg-white/50"
+            className="bg-white text-gray-950 h-12 w-full rounded-xl font-semibold inline-flex items-center justify-center gap-2 mt-8 md:w-auto px-6 hover:bg-white/50"
         >
             {pending ? 'Sending...' : 'Send Message'}
         </Button>
@@ -29,6 +37,7 @@ function SubmitButton() {
 export default function ContactForm() {
     const [status, setStatus] = useState<'success' | 'error' | null>(null);
     const formRef = useRef<HTMLFormElement>(null);
+    const [selectedCountry, setSelectedCountry] = useState<CountryOption | null>(null);
 
     async function handleSubmit(formData: FormData) {
         const result = await sendEmail(formData);
@@ -36,10 +45,15 @@ export default function ContactForm() {
         if (result.success) {
             setStatus('success');
             formRef.current?.reset();
+            setSelectedCountry(null);
         } else {
             setStatus('error');
         }
     }
+
+    const handleCountryChange = (selectedOption: CountryOption | null) => {
+        setSelectedCountry(selectedOption);
+    };
 
     return (
         <form ref={formRef} action={handleSubmit} className="space-y-4">
@@ -63,15 +77,83 @@ export default function ContactForm() {
                     required
                 />
             </div>
+            <div className="space-y-2 text-[#FFFFFF]">
+                <Label htmlFor="country" className="text-white font-semibold">
+                    Country
+                </Label>
+                <Select
+                    id="country"
+                    name="country"
+                    options={countryOptions}
+                    value={selectedCountry}
+                    onChange={handleCountryChange}
+                    placeholder="Select your country"
+                    getOptionLabel={(option) => option.label}
+                    getOptionValue={(option) => option.value}
+                    className="bg-[#111827] text-white border border-[#111827] focus:ring-[#111827] focus:border-[#111827] placeholder:text-gray-400"
+                    styles={{
+                        control: (base) => ({
+                            ...base,
+                            backgroundColor: '#111827',
+                            color: 'white',
+                            border: '1px solid #111827',
+                        }),
+                        placeholder: (base) => ({
+                            ...base,
+                            color: '#FFFFFF', // Adjust placeholder color if needed
+                        }),
+                        option: (base) => ({
+                            ...base,
+                            backgroundColor: '#111827',
+                            color: 'white',
+                        }),
+                        singleValue: (base) => ({
+                            ...base,
+                            color: 'white',
+                        }),
+                    }}
+                />
+            </div>
+
+            <div className="space-y-2">
+                <Label htmlFor="mobile">Mobile Number</Label>
+                <div className="flex">
+                    <Input
+                        type="text"
+                        id="phoneCode"
+                        name="phoneCode"
+                        value={selectedCountry ? selectedCountry.phoneCode : ''}
+                        readOnly
+                        className="w-20 mr-2"
+                    />
+                    <Input
+                        type="tel"
+                        id="mobile"
+                        name="mobile"
+                        required
+                        placeholder="Enter your mobile number"
+                    />
+                </div>
+            </div>
             <div className="space-y-2">
                 <Label htmlFor="budget">Budget</Label>
-                <Input
-                    type="number"
-                    id="budget"
-                    name="budget"
-                    required
-                    placeholder="Enter your budget"
-                />
+                <div className="flex items-center">
+                    <Input
+                        type="text"
+                        id="currency"
+                        name="currency"
+                        value={selectedCountry ? selectedCountry.currency : ''}
+                        readOnly
+                        className="w-20 mr-2"
+                    />
+                    <Input
+                        type="number"
+                        id="budget"
+                        name="budget"
+                        required
+                        placeholder="Enter your budget"
+                    />
+                </div>
             </div>
             <div className="space-y-2">
                 <Label htmlFor="message">Message</Label>

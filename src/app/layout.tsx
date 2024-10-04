@@ -16,8 +16,11 @@ const calistoga = Calistoga({
   weight: ["400"]
 });
 
+// Use environment variable for the metadata base URL
+const metadataBase = new URL(process.env.NEXT_PUBLIC_METADATA_BASE!); // Ensure it's not undefined
 
 export const metadata: Metadata = {
+  metadataBase, // Add the base URL here
   title: 'Sahad Daily | Web Design & Digital Marketing Agency',
   description: 'Expert web design and digital marketing solutions to grow your business. We create stunning, conversion-focused websites and implement results-driven marketing strategies.',
   keywords: 'web design, digital marketing, SEO, website development, marketing agency, brand strategy, Sahad Daily, sahad daily',
@@ -39,7 +42,6 @@ export const metadata: Metadata = {
     title: 'Sahad Daily | Web Design & Digital Marketing Agency',
     description: 'Elevate your brand with professional web design and strategic digital marketing. Let\'s grow your business together.',
     images: ['/favicon.png'],
-
   },
   icons: {
     icon: [

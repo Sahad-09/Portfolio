@@ -5,6 +5,10 @@ import nodemailer from 'nodemailer';
 export async function sendEmail(formData: FormData) {
   const name = formData.get('name') as string;
   const email = formData.get('email') as string;
+  const country = formData.get('country') as string;
+  const phoneCode = formData.get('phoneCode') as string;
+  const mobile = formData.get('mobile') as string;
+  const currency = formData.get('currency') as string;
   const budget = formData.get('budget') as string;
   const message = formData.get('message') as string;
 
@@ -24,7 +28,9 @@ export async function sendEmail(formData: FormData) {
       text: `
         Name: ${name}
         Email: ${email}
-        Budget: $${budget}
+        Country: ${country}
+        Phone: ${phoneCode}${mobile}
+        Budget: ${currency}${budget}
         Message: ${message}
       `,
     };

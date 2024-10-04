@@ -1,0 +1,122 @@
+[
+    {
+        "value": "US",
+        "label": "United States",
+        "currency": "USD",
+        "phoneCode": "+1"
+    },
+    {
+        "value": "UK",
+        "label": "United Kingdom",
+        "currency": "GBP",
+        "phoneCode": "+44"
+    },
+    {
+        "value": "CA",
+        "label": "Canada",
+        "currency": "CAD",
+        "phoneCode": "+1"
+    },
+    {
+        "value": "AU",
+        "label": "Australia",
+        "currency": "AUD",
+        "phoneCode": "+61"
+    },
+    {
+        "value": "DE",
+        "label": "Germany",
+        "currency": "EUR",
+        "phoneCode": "+49"
+    },
+    {
+        "value": "FR",
+        "label": "France",
+        "currency": "EUR",
+        "phoneCode": "+33"
+    },
+    {
+        "value": "NL",
+        "label": "Netherlands",
+        "currency": "EUR",
+        "phoneCode": "+31"
+    },
+    {
+        "value": "SE",
+        "label": "Sweden",
+        "currency": "SEK",
+        "phoneCode": "+46"
+    },
+    {
+        "value": "NO",
+        "label": "Norway",
+        "currency": "NOK",
+        "phoneCode": "+47"
+    },
+    {
+        "value": "CH",
+        "label": "Switzerland",
+        "currency": "CHF",
+        "phoneCode": "+41"
+    },
+    {
+        "value": "JP",
+        "label": "Japan",
+        "currency": "JPY",
+        "phoneCode": "+81"
+    },
+    {
+        "value": "SG",
+        "label": "Singapore",
+        "currency": "SGD",
+        "phoneCode": "+65"
+    },
+    {
+        "value": "AE",
+        "label": "United Arab Emirates",
+        "currency": "AED",
+        "phoneCode": "+971"
+    },
+    {
+        "value": "HK",
+        "label": "Hong Kong",
+        "currency": "HKD",
+        "phoneCode": "+852"
+    },
+    {
+        "value": "IN",
+        "label": "India",
+        "currency": "INR",
+        "phoneCode": "+91"
+    },
+    {
+        "value": "IL",
+        "label": "Israel",
+        "currency": "ILS",
+        "phoneCode": "+972"
+    },
+    {
+        "value": "ZA",
+        "label": "South Africa",
+        "currency": "ZAR",
+        "phoneCode": "+27"
+    },
+    {
+        "value": "BR",
+        "label": "Brazil",
+        "currency": "BRL",
+        "phoneCode": "+55"
+    },
+    {
+        "value": "IE",
+        "label": "Ireland",
+        "currency": "EUR",
+        "phoneCode": "+353"
+    },
+    {
+        "value": "NZ",
+        "label": "New Zealand",
+        "currency": "NZD",
+        "phoneCode": "+64"
+    }
+]
