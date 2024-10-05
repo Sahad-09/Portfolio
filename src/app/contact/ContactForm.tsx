@@ -24,6 +24,7 @@ interface CountryOption {
     value: string;
     phoneCode: string;
     currency: string;
+    currencySymbol: string;
 }
 
 function SubmitButton() {
@@ -52,7 +53,7 @@ export default function ContactForm() {
         if (selectedCountryData) {
             formData.set('country', selectedCountryData.label);
             formData.set('phoneCode', selectedCountryData.phoneCode);
-            formData.set('currency', selectedCountryData.currency);
+            formData.set('currency', `${selectedCountryData.currency} (${selectedCountryData.currencySymbol})`);
         }
 
         formData.set('phone', `${selectedCountryData?.phoneCode || ''}${phoneNumber}`);
@@ -129,10 +130,21 @@ export default function ContactForm() {
                     />
                 </div>
             </div>
+
             <div className="space-y-2">
                 <Label htmlFor="budget">Budget</Label>
                 <div className="flex items-center">
-                    <span className="mr-2">{selectedCountryData ? selectedCountryData.currency : ''}</span>
+                    <span className="mr-2 flex gap-1">
+
+                        {selectedCountryData && (
+                            <>
+                                <span>{selectedCountryData.currency}</span>
+                                <span> ({selectedCountryData.currencySymbol})</span>
+                            </>
+                        )}
+                    </span>
+
+
                     <Input
                         type="number"
                         id="budget"

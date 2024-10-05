@@ -17,7 +17,7 @@ export async function sendEmail(formData: FormData) {
     ? phone.replace(phoneCode, `${phoneCode} `)
     : `${phoneCode} ${phone}`;
 
-  // Add a space after the currency symbol
+  // Format the budget with currency and symbol
   const formattedBudget = `${currency} ${budget}`;
 
   try {
@@ -34,13 +34,13 @@ export async function sendEmail(formData: FormData) {
       to: process.env.EMAIL_USER,
       subject: `New Contact Form Submission from ${name}`,
       text: `
-        Name: ${name}
-        Email: ${email}
-        Country: ${country}
-        Phone: ${fullPhoneNumber}
-        Budget: ${formattedBudget}
-        Message: ${message}
-      `,
+                Name: ${name}
+                Email: ${email}
+                Country: ${country}
+                Phone: ${fullPhoneNumber}
+                Budget: ${formattedBudget}
+                Message: ${message}
+            `,
     };
 
     await transporter.sendMail(mailOptions);
