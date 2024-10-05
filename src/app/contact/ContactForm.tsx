@@ -77,8 +77,11 @@ export default function ContactForm() {
                     required
                 />
             </div>
-            <div className="space-y-2">
-                <label htmlFor="country" className="text-white font-semibold">
+
+
+
+            <div className="space-y-2 bg-[#111827]">
+                <label htmlFor="country" className="text-white font-semibold bg-[#111827]">
                     Country
                 </label>
                 <Select
@@ -90,22 +93,23 @@ export default function ContactForm() {
                     placeholder="Select your country"
                     getOptionLabel={(option) => option.label}
                     getOptionValue={(option) => option.value}
-                    className="bg-[#111827] text-white border border-[#E4E4E7] focus:ring-[#111827] focus:border-[#111827] placeholder:text-gray-400 scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-900 rounded-lg"
+                    className="bg-[#111827]  text-white border border-[#E4E4E7] focus:ring-[#111827] focus:border-[#111827] placeholder:text-gray-400 scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-900 rounded-lg"
                     styles={{
                         control: (base) => ({
                             ...base,
                             backgroundColor: '#111827',
                             color: 'white',
-                            border: '1px solid #111827',
+                            border: '1px solid #111827'
                         }),
                         placeholder: (base) => ({
                             ...base,
-                            color: '#BFBFBF', // Adjust placeholder color if needed
+                            color: '#BFBFBF',
                         }),
-                        option: (base) => ({
+                        option: (base, state) => ({
                             ...base,
-                            backgroundColor: '#111827',
+                            backgroundColor: state.isFocused ? '#374151' : '#111827', // Change background on hover
                             color: 'white',
+                            cursor: 'pointer', // Add pointer to indicate it's clickable
                         }),
                         singleValue: (base) => ({
                             ...base,
@@ -118,15 +122,8 @@ export default function ContactForm() {
 
             <div className="space-y-2">
                 <Label htmlFor="mobile">Mobile Number</Label>
-                <div className="flex">
-                    <Input
-                        type="text"
-                        id="phoneCode"
-                        name="phoneCode"
-                        value={selectedCountry ? selectedCountry.phoneCode : ''}
-                        readOnly
-                        className="w-20 mr-2"
-                    />
+                <div className="flex items-center">
+                    <span className="mr-2">{selectedCountry ? selectedCountry.phoneCode : ''}</span>
                     <Input
                         type="tel"
                         id="mobile"
@@ -139,14 +136,7 @@ export default function ContactForm() {
             <div className="space-y-2">
                 <Label htmlFor="budget">Budget</Label>
                 <div className="flex items-center">
-                    <Input
-                        type="text"
-                        id="currency"
-                        name="currency"
-                        value={selectedCountry ? selectedCountry.currency : ''}
-                        readOnly
-                        className="w-20 mr-2"
-                    />
+                    <span className="mr-2">{selectedCountry ? selectedCountry.currency : ''}</span>
                     <Input
                         type="number"
                         id="budget"
@@ -156,6 +146,7 @@ export default function ContactForm() {
                     />
                 </div>
             </div>
+
             <div className="space-y-2">
                 <Label htmlFor="message">Message</Label>
                 <Textarea
