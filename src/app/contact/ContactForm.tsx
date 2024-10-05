@@ -2,7 +2,6 @@
 import React, { useRef, useState } from 'react';
 import { sendEmail } from '../../lib/actions';
 import { useFormStatus } from 'react-dom';
-import Select from 'react-select';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -11,6 +10,13 @@ import {
     Alert,
     AlertDescription
 } from '@/components/ui/alert';
+import {
+    Select,
+    SelectContent,
+    SelectItem,
+    SelectTrigger,
+    SelectValue,
+} from "@/components/ui/select"
 import countryOptions from '@/lib/countries.json';
 
 interface CountryOption {
@@ -37,23 +43,37 @@ function SubmitButton() {
 export default function ContactForm() {
     const [status, setStatus] = useState<'success' | 'error' | null>(null);
     const formRef = useRef<HTMLFormElement>(null);
-    const [selectedCountry, setSelectedCountry] = useState<CountryOption | null>(null);
+    const [selectedCountry, setSelectedCountry] = useState<string>('');
+    const [phoneNumber, setPhoneNumber] = useState<string>('');
 
     async function handleSubmit(formData: FormData) {
+        const selectedCountryData = countryOptions.find(country => country.value === selectedCountry);
+
+        if (selectedCountryData) {
+            formData.set('country', selectedCountryData.label);
+            formData.set('phoneCode', selectedCountryData.phoneCode);
+            formData.set('currency', selectedCountryData.currency);
+        }
+
+        formData.set('phone', `${selectedCountryData?.phoneCode || ''}${phoneNumber}`);
+
         const result = await sendEmail(formData);
 
         if (result.success) {
             setStatus('success');
             formRef.current?.reset();
-            setSelectedCountry(null);
+            setSelectedCountry('');
+            setPhoneNumber('');
         } else {
             setStatus('error');
         }
     }
 
-    const handleCountryChange = (selectedOption: CountryOption | null) => {
-        setSelectedCountry(selectedOption);
+    const handleCountryChange = (value: string) => {
+        setSelectedCountry(value);
     };
+
+    const selectedCountryData = countryOptions.find(country => country.value === selectedCountry);
 
     return (
         <form ref={formRef} action={handleSubmit} className="space-y-4">
@@ -78,65 +98,41 @@ export default function ContactForm() {
                 />
             </div>
 
-
-
-            <div className="space-y-2 bg-[#111827]">
-                <label htmlFor="country" className="text-white font-semibold bg-[#111827]">
-                    Country
-                </label>
-                <Select
-                    id="country"
-                    name="country"
-                    options={countryOptions}
-                    value={selectedCountry}
-                    onChange={handleCountryChange}
-                    placeholder="Select your country"
-                    getOptionLabel={(option) => option.label}
-                    getOptionValue={(option) => option.value}
-                    className="bg-[#111827]  text-white border border-[#E4E4E7] focus:ring-[#111827] focus:border-[#111827] placeholder:text-gray-400 scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-900 rounded-lg"
-                    styles={{
-                        control: (base) => ({
-                            ...base,
-                            backgroundColor: '#111827',
-                            color: 'white',
-                            border: '1px solid #111827'
-                        }),
-                        placeholder: (base) => ({
-                            ...base,
-                            color: '#BFBFBF',
-                        }),
-                        option: (base, state) => ({
-                            ...base,
-                            backgroundColor: state.isFocused ? '#374151' : '#111827', // Change background on hover
-                            color: 'white',
-                            cursor: 'pointer', // Add pointer to indicate it's clickable
-                        }),
-                        singleValue: (base) => ({
-                            ...base,
-                            color: 'white',
-                        }),
-                    }}
-                />
+            <div className="space-y-2">
+                <Label htmlFor="country">Country</Label>
+                <Select onValueChange={handleCountryChange} value={selectedCountry}>
+                    <SelectTrigger id="country" className="w-full bg-[#111827] text-white border-[#E4E4E7]">
+                        <SelectValue placeholder="Select your country" />
+                    </SelectTrigger>
+                    <SelectContent className="bg-[#111827] text-white border-[#E4E4E7]">
+                        {countryOptions.map((country) => (
+                            <SelectItem key={country.value} value={country.value} className="hover:bg-[#374151] cursor-pointer">
+                                {country.label}
+                            </SelectItem>
+                        ))}
+                    </SelectContent>
+                </Select>
             </div>
 
-
             <div className="space-y-2">
-                <Label htmlFor="mobile">Mobile Number</Label>
+                <Label htmlFor="phone">Phone Number</Label>
                 <div className="flex items-center">
-                    <span className="mr-2">{selectedCountry ? selectedCountry.phoneCode : ''}</span>
+                    <span className="mr-2">{selectedCountryData ? selectedCountryData.phoneCode : ''}</span>
                     <Input
                         type="tel"
-                        id="mobile"
-                        name="mobile"
+                        id="phone"
+                        name="phone"
+                        value={phoneNumber}
+                        onChange={(e) => setPhoneNumber(e.target.value)}
                         required
-                        placeholder="Enter your mobile number"
+                        placeholder="Enter your phone number"
                     />
                 </div>
             </div>
             <div className="space-y-2">
                 <Label htmlFor="budget">Budget</Label>
                 <div className="flex items-center">
-                    <span className="mr-2">{selectedCountry ? selectedCountry.currency : ''}</span>
+                    <span className="mr-2">{selectedCountryData ? selectedCountryData.currency : ''}</span>
                     <Input
                         type="number"
                         id="budget"
