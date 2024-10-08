@@ -132,7 +132,7 @@ export default function ContactForm() {
             </div>
 
             <div className="space-y-2">
-                <Label htmlFor="budget">Budget</Label>
+                <Label htmlFor="budget">Budget (Optional)</Label>
                 <div className="flex items-center">
                     <span className="mr-2 flex gap-1">
 
