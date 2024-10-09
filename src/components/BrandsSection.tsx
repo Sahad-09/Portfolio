@@ -31,13 +31,12 @@ const brands: Brand[] = [
 
 export function BrandsSection() {
     return (
-        <div className="brands-section my-12 py-8 bg-transparent">
-            <h2 className="text-center text-3xl font-bold mb-8">Brands We&apos;ve Worked With</h2>
+        <div className="brands-section my-6 md:my-12 py-6 md:py-8 bg-transparent">
+            <h2 className="text-center text-2xl md:text-3xl font-bold mb-6 md:mb-8">Brands We&apos;ve Worked With</h2>
 
-
-            <div className={`max-w-6xl mx-auto ${brands.length === 1 ? 'flex justify-center' : 'grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8'}`}>
+            <div className={`max-w-6xl mx-auto ${brands.length === 1 ? 'flex justify-center' : 'grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8'}`}>
                 {brands.map((brand, index) => (
-                    <Card key={index} className="p-4 text-white w-full max-w-md relative">
+                    <Card key={index} className="p-4 text-white w-full max-w-xs md:max-w-md relative">
                         {brand.website && (
                             <a
                                 href={brand.website}
@@ -50,21 +49,21 @@ export function BrandsSection() {
                         )}
                         <CardHeader
                             title={brand.name}
-                            className="text-white text-2xl"
+                            className="text-white text-xl md:text-2xl"
                         />
-                        <div className="flex justify-center my-auto">
+                        <div className="flex justify-center my-4">
                             <Image
                                 src={brand.logo}
                                 alt={`${brand.name} Logo`}
-                                width={150}
-                                height={150}
+                                width={120} // Reduced size for better mobile visibility
+                                height={120}
                                 className="rounded-md pb-4"
                             />
                         </div>
-                        <div className="text-center text-sm">
-                            <p className="font-semibold mb-2"></p>
+                        <div className="text-center text-xs md:text-sm">
+                            <p className="font-semibold mb-1"></p>
                             {brand.owners.map((owner, ownerIndex) => (
-                                <p key={ownerIndex}>{owner.name} - {owner.role}</p>
+                                <p key={ownerIndex} className="mb-1">{owner.name} - {owner.role}</p>
                             ))}
                         </div>
                     </Card>
