@@ -5,7 +5,9 @@ import { TestimonialsSection } from "@/sections/Testimonials";
 import { AboutSection } from "@/sections/About";
 import { ContactSection } from "@/sections/Contact";
 import { Footer } from "@/sections/Footer";
-import { BrandsSection } from "@/components/BrandsSection";
+import { BrandsSection } from "@/sections/BrandsSection";
+
+import Services from "@/sections/Services";
 
 export default function Home() {
   return (
@@ -13,9 +15,11 @@ export default function Home() {
       <section id="home">
         <HeroSection />
       </section>
-      {/* BrandsSection now comes before ProjectsSection */}
       <section id="brands">
         <BrandsSection />
+      </section>
+      <section id="services">
+        <Services />
       </section>
       <section id="project">
         <ProjectsSection />
@@ -32,3 +36,4 @@ export default function Home() {
     </div>
   );
 }
+
