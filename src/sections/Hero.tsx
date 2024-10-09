@@ -1,3 +1,4 @@
+"use client"
 import ArrowDown from "@/assets/icons/arrow-down.svg";
 import memojiImage from "@/assets/images/memoji-computer.png";
 import Image from "next/image";
@@ -7,6 +8,13 @@ import { HeroOrbit } from "@/components/HeroOrbit";
 import Link from 'next/link';
 
 export const HeroSection = () => {
+
+  const scrollToProjects = () => {
+    const projectsSection = document.getElementById('brands');
+    if (projectsSection) {
+      projectsSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
   return (
     <div className="py-32 md:py-48 lg:py-60 relative z-0 overflow-clip">
       <div className="absolute inset-0 [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_70%,transparent)]">
@@ -62,14 +70,17 @@ export const HeroSection = () => {
           </p>
         </div>
         <div className="flex flex-col md:flex-row justify-center items-center mt-8 gap-4">
-          <button className="inline-flex items-center gap-2 border border-white/15 px-6 h-12 rounded-xl">
+          <button
+            className="inline-flex  z-50 cursor-pointer items-center gap-2 border border-white/15 px-6 h-12 rounded-xl"
+            onClick={scrollToProjects}
+          >
             <span className="font-semibold">Explore My Work</span>
             <ArrowDown className="size-4" />
           </button>
-          <Link href="/contact">
+          <Link href="/contact" className=" z-50">
             <button className="inline-flex items-center gap-2 border bg-white border-white text-gray-900 h-12 px-6 rounded-xl">
               <span>👋</span>
-              <span className="font-semibold">Let&apos;s Connect</span>
+              <span className="font-semibold ">Let&apos;s Connect</span>
             </button>
           </Link>
         </div>
