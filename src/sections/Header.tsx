@@ -39,12 +39,6 @@ export const Header = () => {
           Home
         </a>
         <a
-          href="/#services"
-          className={`nav-item ${activeSection === 'services' && !isContactPage ? 'bg-white text-gray-900' : ''}`}
-        >
-          Services
-        </a>
-        <a
           href="/#project"
           className={`nav-item ${activeSection === 'project' && !isContactPage ? 'bg-white text-gray-900' : ''}`}
         >

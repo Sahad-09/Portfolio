@@ -13,7 +13,7 @@ interface Brand {
     logo: string;
     owners: Owner[];
     description: string;
-    website?: string; // Add this line to include an optional website URL
+    website?: string;
 }
 
 const brands: Brand[] = [

@@ -10,7 +10,7 @@ import Link from 'next/link';
 export const HeroSection = () => {
 
   const scrollToProjects = () => {
-    const projectsSection = document.getElementById('brands');
+    const projectsSection = document.getElementById('project');
     if (projectsSection) {
       projectsSection.scrollIntoView({ behavior: 'smooth' });
     }

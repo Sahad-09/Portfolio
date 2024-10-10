@@ -14,11 +14,7 @@ export default function Home() {
     <div>
       <section id="home">
         <HeroSection />
-      </section>
-      <section id="brands">
         <BrandsSection />
-      </section>
-      <section id="services">
         <Services />
       </section>
       <section id="project">
