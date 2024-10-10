@@ -3,19 +3,19 @@ import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg"
 const footerLinks = [
   {
     title: 'YouTube',
-    href: 'https://www.youtube.com',
+    href: 'https://www.youtube.com/@sahadpop4135',
   },
   {
     title: 'Twitter',
-    href: 'https://www.twitter.com',
+    href: 'https://x.com/Sahad_pop',
   },
   {
     title: 'Instagram',
-    href: 'https://www.instagram.com',
+    href: 'https://www.instagram.com/sahad__.x',
   },
   {
     title: 'LinkedIn',
-    href: 'https://www.linkedin.com',
+    href: 'https://www.linkedin.com/in/sahad-pop',
   },
 ];
 
