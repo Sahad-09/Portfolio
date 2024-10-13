@@ -105,13 +105,6 @@
         "phoneCode": "+91"
     },
     {
-        "value": "IL",
-        "label": "Israel",
-        "currency": "ILS",
-        "currencySymbol": "₪",
-        "phoneCode": "+972"
-    },
-    {
         "value": "ZA",
         "label": "South Africa",
         "currency": "ZAR",
