@@ -32,7 +32,7 @@ const brands: Brand[] = [
 export function BrandsSection() {
     return (
         <div className="brands-section my-6 md:my-12 py-6 md:py-8 bg-transparent">
-            <h2 className="text-center text-2xl md:text-3xl font-bold mb-6 md:mb-8">Brands We&apos;ve Worked With</h2>
+            <h2 className="text-center text-2xl md:text-3xl font-bold mb-6 md:mb-8">Brands I&apos;ve Worked With</h2>
 
             <div className={`max-w-6xl mx-auto ${brands.length === 1 ? 'flex justify-center' : 'grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8'}`}>
                 {brands.map((brand, index) => (
