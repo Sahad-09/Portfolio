@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     siteName: 'Sahad Daily',
     images: [{
-      url: '/favicon.png',
+      url: '/logoo.png',
       width: 1200,
       height: 630,
       alt: 'Sahad Daily - Freelance Web Design',
