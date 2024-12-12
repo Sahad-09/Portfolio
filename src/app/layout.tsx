@@ -22,12 +22,12 @@ const metadataBase = new URL(process.env.NEXT_PUBLIC_METADATA_BASE!); // Ensure 
 
 export const metadata: Metadata = {
   metadataBase, // Add the base URL here
-  title: 'Sahad Daily | Web Design & Digital Marketing Agency',
-  description: 'Expert web design and digital marketing solutions to grow your business. We create stunning, conversion-focused websites and implement results-driven marketing strategies.',
-  keywords: 'web design, digital marketing, SEO, website development, marketing agency, brand strategy, Sahad Daily, sahad daily',
+  title: 'Sahad Daily | Freelance Web Design by a Passionate Student',
+  description: 'Creative and affordable web design solutions tailored to your needs. As a dedicated student, I bring fresh ideas and a personal touch to your online presence.',
+  keywords: 'freelance web design, student web developer, affordable websites, website development, personal projects, Sahad Daily, sahad daily',
   openGraph: {
-    title: 'Sahad Daily | Web Design & Digital Marketing Agency',
-    description: 'Transform your online presence with our expert web design and digital marketing solutions. Get stunning, conversion-focused websites and data-driven strategies.',
+    title: 'Sahad Daily | Freelance Web Design by a Passionate Student',
+    description: 'Get creative and affordable web design solutions from a dedicated student. I bring fresh ideas and a personal touch to help you achieve your online goals.',
     type: 'website',
     locale: 'en_US',
     siteName: 'Sahad Daily',
@@ -35,13 +35,13 @@ export const metadata: Metadata = {
       url: '/favicon.png',
       width: 1200,
       height: 630,
-      alt: 'Sahad Daily - Web Design & Digital Marketing Agency'
+      alt: 'Sahad Daily - Freelance Web Design',
     }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Sahad Daily | Web Design & Digital Marketing Agency',
-    description: 'Elevate your brand with professional web design and strategic digital marketing. Let\'s grow your business together.',
+    title: 'Sahad Daily | Freelance Web Design by a Passionate Student',
+    description: 'Affordable and creative web design by a student with a passion for building stunning websites. Let\'s work together to achieve your vision.',
     images: ['/favicon.png'],
   },
   icons: {
@@ -56,6 +56,7 @@ export const metadata: Metadata = {
     canonical: 'https://www.sahaddaily.in',
   },
 };
+
 
 export default function RootLayout({
   children,
