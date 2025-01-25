@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Sahad Daily | Freelance Web Design by a Passionate Developer',
     description: 'Affordable and creative web design by a student with a passion for building stunning websites. Let\'s work together to achieve your vision.',
-    images: ['/favicon.png'],
+    images: ['/logoo.png'],
   },
   icons: {
     icon: [
