@@ -27,6 +27,15 @@ const brands: Brand[] = [
         website: "https://skydiamonddreams.com"
     },
     {
+        name: "Hindustan Builders",
+        logo: "/hindustan logo.png",
+        owners: [
+            { name: "Mooshin", role: "Business Manager" }
+        ],
+        description: "Leading company in tech solutions.",
+        website: "https://www.hindustanbuilders.in"
+    },
+    {
         name: "Build Up Kasaragod",
         logo: "/buk.png",
         owners: [
@@ -51,7 +60,7 @@ export function BrandsSection() {
             />
 
             <h2 className="text-center text-2xl md:text-3xl font-bold mb-6 md:mb-8 relative z-10">
-                Brands I&apos;ve Worked With
+                Businesses I've Worked For
             </h2>
 
             <div className="

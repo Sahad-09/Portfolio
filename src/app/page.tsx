@@ -15,13 +15,13 @@ export default function Home() {
       <section id="home">
         <HeroSection />
         <BrandsSection />
-        <Services />
+        {/* <Services /> */}
       </section>
       <section id="project">
         <ProjectsSection />
       </section>
       <TapeSection />
-      <TestimonialsSection />
+      {/* <TestimonialsSection /> */}
       <section id="about">
         <AboutSection />
       </section>
