@@ -60,7 +60,7 @@ export function BrandsSection() {
             />
 
             <h2 className="text-center text-2xl md:text-3xl font-bold mb-6 md:mb-8 relative z-10">
-                Businesses I've Worked For
+                Businesses I&apos;ve Worked For
             </h2>
 
             <div className="
